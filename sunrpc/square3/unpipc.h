@@ -482,7 +482,7 @@ void	 Clnt_control(CLIENT *, u_int, char *);
 
 #endif	/* __unpipc_h */
 
-struct msgbuf
+struct msgbuf2
 {
     __syscall_slong_t mtype;	/* type of received/sent message */
     char mtext[1];		/* text of the message */

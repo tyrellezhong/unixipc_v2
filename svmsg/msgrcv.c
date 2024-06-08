@@ -8,7 +8,7 @@ main(int argc, char **argv)
 	int		c, flag, mqid;
 	long	type;
 	ssize_t	n;
-	struct msgbuf	*buff;
+	struct msgbuf2	*buff;
 
 	type = flag = 0;
 	while ( (c = Getopt(argc, argv, "nt:")) != -1) {

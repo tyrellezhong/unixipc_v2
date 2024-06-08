@@ -6,7 +6,7 @@ main(int argc, char **argv)
 {
 	int				msqid;
 	struct msqid_ds	info;
-	struct msgbuf	buf;
+	struct msgbuf2	buf;
 
 	msqid = Msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);
 
