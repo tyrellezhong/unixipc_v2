@@ -13,7 +13,7 @@ main(int argc, char **argv)
 	len = atoi(argv[2]);
 	type = atoi(argv[3]);
 
-	mqid = Msgget(Ftok(argv[1], 0), MSG_W);
+	mqid = Msgget(Ftok(argv[1], 0), S_IRUSR);
 
 	ptr = Calloc(sizeof(long) + len, sizeof(char));
 	ptr->mtype = type;

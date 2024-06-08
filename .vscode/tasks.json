@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/build"
+    },
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cmake",
+            "command": "cmake",
+            "args": [
+                ".."
+            ],
+        },
+        {
+            "label": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "make",
+            "args": [
+
+            ],
+        },
+        {
+            "type": "shell",
+            "label": "protoc",
+            "command": "protoc",
+            "args": ["-I=${workspaceFolder}/includes",
+                    "--cpp_out=${workspaceFolder}/src",
+                    "proto_test.proto"
+            ]
+        },
+        {
+            "label": "Build",
+            "dependsOn":[
+                "cmake",
+                "make",
+            ]
+        }
+    ],
+
+}

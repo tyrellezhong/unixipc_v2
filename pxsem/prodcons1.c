@@ -24,11 +24,11 @@ main(int argc, char **argv)
 	nitems = atoi(argv[1]);
 
 		/* 4create three semaphores */
-	shared.mutex = Sem_open(Px_ipc_name(SEM_MUTEX), O_CREAT | O_EXCL,
+	shared.mutex = Sem_open(Px_ipc_name(SEM_MUTEX), O_CREAT ,
 							FILE_MODE, 1);
-	shared.nempty = Sem_open(Px_ipc_name(SEM_NEMPTY), O_CREAT | O_EXCL,
+	shared.nempty = Sem_open(Px_ipc_name(SEM_NEMPTY), O_CREAT ,
 							 FILE_MODE, NBUFF);
-	shared.nstored = Sem_open(Px_ipc_name(SEM_NSTORED), O_CREAT | O_EXCL,
+	shared.nstored = Sem_open(Px_ipc_name(SEM_NSTORED), O_CREAT,
 							  FILE_MODE, 0);
 
 		/* 4create one producer thread and one consumer thread */

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include	"unpipc.h"
 
 int
@@ -18,7 +19,7 @@ main(int argc, char **argv)
 		err_quit("usage: mqcreate [ -e ] <name>");
 
 	mqd = Mq_open(argv[optind], flags, FILE_MODE, NULL);
-
+    printf("create ret %d\n", mqd);
 	Mq_close(mqd);
 	exit(0);
 }

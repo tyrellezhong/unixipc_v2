@@ -1,3 +1,4 @@
+#include <fcntl.h>
 #include	"unpipc.h"
 
 int
@@ -15,4 +16,6 @@ main(int argc, char **argv)
 		Write(STDOUT_FILENO, buff, n);
 
 	exit(0);
+
+
 }

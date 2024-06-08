@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include	"unpipc.h"
 
 #define	SEQFILE	"seqno"		/* filename */
@@ -27,7 +28,7 @@ main(int argc, char **argv)
 		printf("%s: pid = %ld, seq# = %ld\n", argv[0], (long) pid, seqno);
 
 		seqno++;					/* increment sequence number */
-
+        sleep(1);
 		snprintf(line, sizeof(line), "%ld\n", seqno);
 		Lseek(fd, 0L, SEEK_SET);	/* rewind before write */
 		Write(fd, line, strlen(line));

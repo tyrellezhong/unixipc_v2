@@ -13,6 +13,6 @@ Mesg_send(int fd, struct mymesg *mptr)
 {
 	ssize_t	n;
 
-	if ( (n = mesg_send(fd, mptr)) != mptr->mesg_len)
+	if ( (n = mesg_send(fd, mptr)) != mptr->mesg_len + MESGHDRSIZE)
 		err_quit("mesg_send error");
 }

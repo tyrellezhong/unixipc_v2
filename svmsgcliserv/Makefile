@@ -14,3 +14,6 @@ server_main:	server_main.o server.o mesg_recv.o mesg_send.o
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
+		cd build && rm -f ${PROGS} ${CLEANFILES}
+install:
+		mv ${PROGS} ${CLEANFILES} build/

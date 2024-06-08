@@ -25,7 +25,7 @@ main(int argc, char **argv)
 	if (optind != argc - 1)
 		err_quit("usage: msgrcv [ -n ] [ -t type ] <pathname>");
 
-	mqid = Msgget(Ftok(argv[optind], 0), MSG_R);
+	mqid = Msgget(Ftok(argv[optind], 0), S_IRUSR);
 
 	buff = Malloc(MAXMSG);
 

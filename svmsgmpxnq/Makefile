@@ -14,3 +14,8 @@ server_main:	server_main.o server.o mesg_recv.o mesg_send.o sigchldwaitpid.o
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
+		cd build && rm -f ${PROGS} ${CLEANFILES}
+		
+.phony: install
+install:
+		mv ${PROGS} ${CLEANFILES} build/

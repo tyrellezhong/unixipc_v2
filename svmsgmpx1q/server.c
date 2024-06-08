@@ -45,7 +45,7 @@ server(int readfd, int writefd)
 		}
 	
 			/* 4send a 0-length message to signify the end */
-		mesg.mesg_len = 0;
+		mesg.mesg_len = 5;
 		Mesg_send(writefd, &mesg);
 	}
 }

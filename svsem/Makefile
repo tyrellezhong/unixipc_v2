@@ -30,4 +30,6 @@ limits:	limits.o
 		${CC} ${CFLAGS} -o $@ limits.o ${LIBS}
 
 clean:
-		rm -f ${PROGS} ${CLEANFILES}
+		cd build && rm -f ${PROGS} ${CLEANFILES}
+install:
+		mkdir build && mv ${PROGS} ${CLEANFILES} build/
