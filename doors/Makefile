@@ -122,3 +122,7 @@ tserver1:	tserver1.o
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
+		cd build && rm -f ${PROGS} ${CLEANFILES}
+install:
+		mkdir build && mv ${PROGS} ${CLEANFILES} build/
+

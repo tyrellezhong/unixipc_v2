@@ -40,3 +40,8 @@ test3:	test3.o
 
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
+		cd build && rm -f ${PROGS} ${CLEANFILES}
+		
+.phony: install
+install:
+		mv ${PROGS} ${CLEANFILES} build/

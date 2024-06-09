@@ -1,3 +1,4 @@
+#include <sys/stat.h>
 #include	"unpipc.h"
 
 #define	MAXMSG	(8192 + sizeof(long))
@@ -10,7 +11,7 @@ main(int argc, char **argv)
 	pid_t	childpid;
 	fd_set	rset;
 	ssize_t	n, nread;
-	struct msgbuf	*buff;
+	struct msgbuf2	*buff;
 
 	if (argc != 2)
 		err_quit("usage: svmsgread <pathname>");
@@ -24,7 +25,7 @@ main(int argc, char **argv)
 		Close(pipe1[1]);			/* child */
 		Close(pipe2[0]);
 
-		mqid = Msgget(Ftok(argv[1], 0), MSG_R);
+		mqid = Msgget(Ftok(argv[1], 0), S_IWUSR);
 		for ( ; ; ) {
 				/* 4block, waiting for message, then tell parent */
 			nread = Msgrcv(mqid, buff, MAXMSG, 0, 0);
